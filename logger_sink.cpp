@@ -8,10 +8,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 
-#include "logger_sink.h"
-
-
-
 #include <sstream>
 #include <iostream>
 #include <chrono>  // chrono::system_clock
@@ -19,7 +15,7 @@
 #include <iomanip> // put_time
 #include <stdexcept>
 
-
+#include "logger_sink.h"
 
 
 namespace logger {
