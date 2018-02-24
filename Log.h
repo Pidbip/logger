@@ -23,27 +23,27 @@
 
 namespace logger{
 
-class Log {
-public:
-	Log(prior priority);
+	class Log {
+	public:
+		Log(prior priority);
 
-	~Log();
+		~Log();
 
-	std::ostringstream& stream();
+		std::ostringstream& stream();
 
-private:
-	prior m_priority;
-	std::ostringstream m_stream;
-};
+	private:
+		prior m_priority;
+		std::ostringstream m_stream;
+	};
 
 
-#ifdef __linux__
-void InitSystemLog(const char *ident, int option = LOG_PID, int facility = LOG_USER, prior prior_max = DEBUG);
-#endif
+	#ifdef __linux__
+	void InitSystemLog(const char *ident, int option = LOG_PID, int facility = LOG_USER, prior prior_max = DEBUG);
+	#endif
 
-void InitLocalLog(const char *ident, const std::string &filename, prior prior_max = DEBUG);
+	void InitLocalLog(const char *ident, const std::string &filename, prior prior_max = DEBUG);
 
-void InitConsolLog(const char *ident, prior prior_max = DEBUG);
+	void InitConsolLog(const char *ident, prior prior_max = DEBUG);
 
 }
 
